@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    {% for item in object_list %}
+    
+        <li><a href="/articles/{{item.id}}">{{ item.id }}</a></li>
+        <li>Title : {{ item.title }} </li>
+        <li>Content : {{ item.content }} </li>
+
+    {% endfor %}
+</ul>
+<h1>title {{ title }}</h1>
+<h1>content {{ content }}</h1>
+{% endblock content %}
+

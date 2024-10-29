@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% comment %} {% if object %} {% endcomment %}
+{% if not created %}
+ <div style='margin-top:30px'>
+    <form action='.' enctype="multipart/form-data" method="POST"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Create article'/>
+     </form>
+ </div>
+ {% else %}
+ <li><a href="/articles/{{object.id}}">{{ object.title }}</a></li>
+
+ {% endif %}
+{% endblock content %}
